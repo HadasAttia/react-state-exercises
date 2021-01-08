@@ -10,14 +10,26 @@ import './Board.css';
  */
 
 class Board extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			chosenBoard: ''
+		}
+	}
+
+	changeColor(num) {
+		this.setState({
+			chosenBoard: num
+		});
+	}
 	render() {
 		return (
 			<div className="Board">
 				<h1>Choose board:</h1>
 				<div className="boards">
-					<div className="Board-option">1</div>
-					<div className="Board-option">2</div>
-					<div className="Board-option">3</div>
+					<div onClick={this.changeColor.bind(this, 1)} className={this.state.chosenBoard === 1 ? "clicked" : "Board-option"}>1</div>
+					<div onClick={this.changeColor.bind(this, 2)} className={this.state.chosenBoard === 2 ? "clicked" : "Board-option"}>2</div>
+					<div onClick={this.changeColor.bind(this, 3)} className={this.state.chosenBoard === 3 ? "clicked" : "Board-option"}>3</div>
 				</div>
 			</div>
 		);

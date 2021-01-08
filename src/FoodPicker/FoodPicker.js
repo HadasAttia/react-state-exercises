@@ -6,6 +6,35 @@ import React, { Component } from 'react';
  */
 
 class FoodPicker extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: '[NAME]',
+			reataurant: '[RESTAURANT]',
+			meal: '[MEAL]',
+			desert: false
+		}
+	}
+	changeName(e) {
+		this.setState({
+			name: e.target.value
+		});
+	}
+	changeRest(e) {
+		this.setState({
+			restaurant: e.target.value
+		});
+	}
+	changeMeal(e) {
+		this.setState({
+			restaurant: e.target.value
+		});
+	}
+	wantDesert(e) {
+		this.setState({
+			desert: !this.state.desert
+		});
+	}
 	render() {
 		return (
 			<div>
